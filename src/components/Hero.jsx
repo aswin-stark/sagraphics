@@ -1,11 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  Star,
-  Users,
-  Clock,
-  Phone,
-  Image as ImageIcon,
-} from "lucide-react";
+import { Star, Users, Clock, Phone, Image as ImageIcon } from "lucide-react";
 
 export default function Hero() {
 
@@ -14,8 +8,7 @@ export default function Hero() {
     if (!el) return;
 
     const offset = 100;
-    const top =
-      el.getBoundingClientRect().top + window.pageYOffset - offset;
+    const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
 
     window.scrollTo({
       top,
@@ -27,18 +20,19 @@ export default function Hero() {
     <section
       id="hero"
       className="relative min-h-screen flex items-start sm:items-center justify-center
-                 pt-24 sm:pt-0 overflow-hidden"
+                 pt-24 sm:pt-0 pb-20 overflow-hidden"
     >
-      {/* Background Glows */}
+      {/* Background Glow */}
       <div className="absolute inset-0">
-        <div className="absolute -top-32 -left-32 w-96 h-96
-                        bg-orange-500/20 rounded-full blur-[150px]" />
-        <div className="absolute bottom-0 right-0 w-96 h-96
-                        bg-purple-600/20 rounded-full blur-[160px]" />
+        <div className="absolute -top-32 -left-32 w-72 sm:w-96 h-72 sm:h-96
+                        bg-orange-500/20 rounded-full blur-[120px]" />
+
+        <div className="absolute bottom-0 right-0 w-72 sm:w-96 h-72 sm:h-96
+                        bg-purple-600/20 rounded-full blur-[130px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-        
+
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -68,7 +62,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="mt-6 text-lg text-gray-400 max-w-2xl mx-auto"
+          className="mt-6 text-base sm:text-lg text-gray-400 max-w-2xl mx-auto"
         >
           Professional DTP & Graphic Solutions
         </motion.p>
@@ -96,8 +90,8 @@ export default function Hero() {
           </button>
         </div>
 
-        {/* Stats */}
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        {/* Stats Grid */}
+        <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
           <Stat icon={<Star />} value="500+" label="Projects Completed" />
           <Stat icon={<Users />} value="200+" label="Happy Clients" />
           <Stat icon={<Clock />} value="20+" label="Years Experience" />
@@ -109,69 +103,40 @@ export default function Hero() {
   );
 }
 
-/* 🔥 Ultra Premium Breathing Glow Card */
-/* 🔥 Ultra Premium Orange + Black Glow Card */
+
+/* Improved Stat Card */
 function Stat({ icon, value, label }) {
   return (
     <div className="relative group">
 
-      {/* BLACK Deep Glow */}
-      <div className="absolute inset-0 rounded-2xl 
-                      shadow-[0_0_50px_rgba(0,0,0,0.85)]
-                      pointer-events-none"></div>
-
-      {/* ORANGE Glow Layer */}
-      <div className="absolute inset-0 rounded-2xl 
-                      shadow-[0_0_40px_rgba(255,115,0,0.7)]
-                      pointer-events-none animate-breath"></div>
+      {/* Glow */}
+      <div className="absolute inset-0 rounded-xl
+                      shadow-[0_0_25px_rgba(255,115,0,0.45)]
+                      opacity-70 group-hover:opacity-100 transition"></div>
 
       {/* Card */}
       <div
         className="relative flex flex-col items-center justify-center
-                   p-6 rounded-2xl
+                   p-4 sm:p-6
+                   rounded-xl
                    bg-white/5 border border-orange-500/30
                    backdrop-blur-xl
                    transition-all duration-500
-                   hover:-translate-y-3
+                   hover:-translate-y-2
                    hover:border-orange-400"
       >
-        <div className="text-orange-400 mb-3
-                        drop-shadow-[0_0_15px_rgba(255,115,0,0.9)]">
+        <div className="text-orange-400 mb-2">
           {icon}
         </div>
 
-        <h3 className="text-2xl font-bold text-white tracking-wide">
+        <h3 className="text-xl sm:text-2xl font-bold text-white">
           {value}
         </h3>
 
-        <p className="text-xs text-gray-400 text-center mt-1">
+        <p className="text-[11px] sm:text-xs text-gray-400 text-center mt-1">
           {label}
         </p>
       </div>
-
-      {/* Breathing Animation */}
-      <style>
-        {`
-        @keyframes breath {
-          0% {
-            transform: scale(1);
-            opacity: 0.6;
-          }
-          50% {
-            transform: scale(1.05);
-            opacity: 1;
-          }
-          100% {
-            transform: scale(1);
-            opacity: 0.6;
-          }
-        }
-
-        .animate-breath {
-          animation: breath 3.5s ease-in-out infinite;
-        }
-        `}
-      </style>
 
     </div>
   );

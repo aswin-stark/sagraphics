@@ -4,12 +4,11 @@ import { Menu, X } from "lucide-react";
 export default function Header() {
   const [open, setOpen] = useState(false);
 
-  // ✅ Smooth scroll with proper offset
   const handleScroll = (id) => {
     const el = document.getElementById(id);
     if (!el) return;
 
-    const offset = 100; // header height
+    const offset = 100;
     const top =
       el.getBoundingClientRect().top + window.pageYOffset - offset;
 
@@ -18,7 +17,7 @@ export default function Header() {
       behavior: "smooth",
     });
 
-    setOpen(false); // close mobile menu
+    setOpen(false);
   };
 
   return (
@@ -32,6 +31,7 @@ export default function Header() {
           <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold">
             SAG
           </div>
+
           <div className="leading-tight">
             <h1 className="text-white font-semibold text-sm">
               SHRI ABIRAMI
@@ -75,7 +75,6 @@ export default function Header() {
 
         {/* CTA + Mobile */}
         <div className="flex items-center gap-3">
-          {/* Desktop FAQ Button */}
           <button
             onClick={() => handleScroll("faq")}
             className="hidden md:block px-5 py-2 rounded-full bg-orange-500 text-white text-sm font-medium hover:bg-orange-600 transition"
@@ -83,7 +82,6 @@ export default function Header() {
             FAQ
           </button>
 
-          {/* Mobile Toggle */}
           <button
             className="md:hidden text-white"
             onClick={() => setOpen(!open)}
@@ -104,7 +102,8 @@ export default function Header() {
               Home
             </button>
 
-            <button onClick={() => handleScroll("portfolio")}>
+            {/* FIXED */}
+            <button onClick={() => handleScroll("services")}>
               Services
             </button>
 
@@ -116,7 +115,6 @@ export default function Header() {
               Contact Us
             </button>
 
-            {/* Mobile FAQ */}
             <button
               onClick={() => handleScroll("faq")}
               className="mt-2 px-6 py-2 rounded-full bg-orange-500 text-white font-medium"

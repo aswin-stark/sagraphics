@@ -80,7 +80,7 @@ export default function AboutSection() {
 
           <p className="text-gray-400 mb-4 leading-relaxed text-justify ">
             We are a professional Desktop Publishing (DTP) and graphic design
-            studio based in Tamil Nadu. With over 20 years of experience, we
+            studio based in Tamil Nadu. With over 25 years of experience, we
             specialize in delivering high-quality print and digital design
             solutions.
           </p>

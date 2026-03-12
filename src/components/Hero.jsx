@@ -104,12 +104,19 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
-          <Stat icon={<Star />} value={500} label="Projects Completed" />
-          <Stat icon={<Users />} value={200} label="Happy Clients" />
-          <Stat icon={<Clock />} value={20} label="Years Experience" />
-          <Stat icon={<ImageIcon />} value={1000} label="Designs Created" />
-        </div>
+<div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 max-w-6xl mx-auto">
+
+  <Stat icon={<Star />} value={10000} label="Projects Completed" />
+
+  <Stat icon={<Users />} value={5000} label="Happy Clients" />
+
+  <Stat icon={<Clock />} value={25} label="Years Experience" />
+
+  <Stat icon={<ImageIcon />} value={1000000} label="Designs Created" />
+
+  <Stat icon={<Star />} value={98.7} label="Client Retention" isPercent />
+
+</div>
 
       </div>
     </section>
@@ -118,8 +125,7 @@ export default function Hero() {
 
 
 /* Stat Component */
-
-function Stat({ icon, value, label }) {
+function Stat({ icon, value, label, isPercent }) {
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -142,7 +148,7 @@ function Stat({ icon, value, label }) {
         clearInterval(counter);
       }
 
-      setCount(Math.floor(start));
+      setCount(start);
 
     }, 16);
 
@@ -171,8 +177,14 @@ function Stat({ icon, value, label }) {
           {icon}
         </div>
 
+        {/* Number */}
         <h3 className="text-xl sm:text-2xl font-bold text-white">
-          {count}+
+
+          {isPercent
+            ? `${count.toFixed(1)}%`
+            : `${Math.floor(count).toLocaleString()}+`
+          }
+
         </h3>
 
         <p className="text-[11px] sm:text-xs text-gray-400 text-center mt-1">

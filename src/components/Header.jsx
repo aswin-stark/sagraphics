@@ -78,12 +78,12 @@ export default function Header() {
 
         {/* CTA + Mobile */}
         <div className="flex items-center gap-3">
-          <button
+          {/* <button
             onClick={() => handleScroll("faq")}
             className="hidden md:block px-5 py-2 rounded-full bg-orange-500 text-white text-sm font-medium hover:bg-orange-600 transition"
           >
             FAQ
-          </button>
+          </button> */}
 
           <button
             className="md:hidden text-white"

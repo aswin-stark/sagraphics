@@ -118,12 +118,12 @@ export default function Header() {
               Contact Us
             </button>
 
-            <button
+            {/* <button
               onClick={() => handleScroll("faq")}
               className="mt-2 px-6 py-2 rounded-full bg-orange-500 text-white font-medium"
             >
               FAQ
-            </button>
+            </button> */}
           </nav>
         </div>
       )}

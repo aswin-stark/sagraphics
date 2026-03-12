@@ -34,11 +34,14 @@ export default function Header() {
 
           <div className="leading-tight">
             <h1 className="text-white font-semibold text-sm">
-              SHRI ABIRAMI
-            </h1>
+                <span className="text-orange-400 font-semibold text-sm tracking-wide">SHRI ABIRAMI
+              
+            </span> GRAPHICS
+            
             <p className="text-orange-400 text-xs tracking-wide">
-              GRAPHICS
+              
             </p>
+            </h1>
           </div>
         </div>
 

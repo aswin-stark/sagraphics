@@ -93,48 +93,46 @@ export default function Services() {
         ))}
 
       </div>
+{/* Popup Modal */}
+{selectedService && (
+  <div className="fixed inset-0 flex items-center justify-center z-50 px-4 py-8 bg-black/40 backdrop-blur-md">
 
-      {/* Popup Modal */}
-      {selectedService && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 px-4 py-8">
+    <div className="max-w-2xl w-full rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto bg-gray-900">
 
-          <div className="max-w-2xl w-full rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto bg-gray-900">
+      {/* Header */}
+      <div className="flex items-center justify-between px-6 pt-6">
+        <h3 className="text-xl sm:text-2xl font-bold text-white">
+          {selectedService.title}
+        </h3>
 
-            {/* Header */}
-            <div className="flex items-center justify-between px-6 pt-6">
-              <h3 className="text-xl sm:text-2xl font-bold text-white">
-                {selectedService.title}
-              </h3>
+        <button
+          onClick={() => setSelectedService(null)}
+          className="text-gray-400 hover:text-white text-lg p-2"
+        >
+          <FaTimes />
+        </button>
+      </div>
 
-              <button
-                onClick={() => setSelectedService(null)}
-                className="text-gray-400 hover:text-white text-lg p-2"
-              >
-                <FaTimes />
-              </button>
-            </div>
+      {/* Image */}
+      <div className="px-6 mt-4">
+        <img
+          src={selectedService.image}
+          alt={selectedService.title}
+          className="w-full h-56 sm:h-64 object-cover rounded-xl"
+        />
+      </div>
 
-            {/* Image */}
-            <div className="px-6 mt-4">
-              <img
-                src={selectedService.image}
-                alt={selectedService.title}
-                className="w-full h-56 sm:h-64 object-cover rounded-xl"
-              />
-            </div>
+      {/* Description */}
+      <div className="px-6 pb-8 mt-6">
+        <p className="text-gray-300 text-sm sm:text-base leading-relaxed text-justify">
+          {selectedService.description}
+        </p>
+      </div>
 
-            {/* Description */}
-            <div className="px-6 pb-8 mt-6">
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed text-justify">
-                {selectedService.description}
-              </p>
-            </div>
+    </div>
 
-          </div>
-
-        </div>
-      )}
-
+  </div>
+)}
     </section>
   );
 }

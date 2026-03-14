@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { Star, Users, Clock, Phone, Image as ImageIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import heroBg from "../assets/bg.png";
+import logo from "../assets/sa.png";
 
 export default function Hero() {
 
@@ -19,11 +20,10 @@ export default function Hero() {
   };
 
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex items-start sm:items-center justify-center pt-24 sm:pt-0 pb-20 overflow-hidden"
-    >
-
+<section
+  id="hero"
+  className="relative min-h-screen flex items-start sm:items-start justify-center pt-28 sm:pt-28 pb-20 overflow-hidden"
+>
       {/* Background Image */}
       <img
         src={heroBg}
@@ -50,10 +50,36 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full
           bg-white/5 border border-white/10 backdrop-blur
-          text-gray-300 text-xs mb-6"
+          text-gray-300 text-xs mb-4"
         >
           <span className="text-orange-400">●</span>
           Professional DTP & Printing Services
+        </motion.div>
+
+        {/* Gradient Ring Logo */}
+        <motion.div
+          className="flex justify-center mt-6 mb-6 relative"
+          initial={{ opacity: 0, scale: 0.7 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7 }}
+        >
+
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+            className="absolute w-28 h-28 rounded-full
+            bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+            blur-lg opacity-60"
+          />
+
+          <div className="relative bg-black/40 p-4 rounded-full backdrop-blur-xl">
+            <img
+              src={logo}
+              alt="logo"
+              className="w-20 sm:w-24 md:w-28 drop-shadow-[0_0_20px_rgba(255,115,0,0.6)]"
+            />
+          </div>
+
         </motion.div>
 
         {/* Heading */}
@@ -104,19 +130,15 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-<div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 max-w-6xl mx-auto">
+        <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 max-w-6xl mx-auto">
 
-  <Stat icon={<Star />} value={10000} label="Projects Completed" />
+          <Stat icon={<Star />} value={10000} label="Projects Completed" />
+          <Stat icon={<Users />} value={5000} label="Happy Clients" />
+          <Stat icon={<Clock />} value={25} label="Years Experience" />
+          <Stat icon={<ImageIcon />} value={1000000} label="Designs Created" />
+          <Stat icon={<Star />} value={98.7} label="Client Retention" isPercent />
 
-  <Stat icon={<Users />} value={5000} label="Happy Clients" />
-
-  <Stat icon={<Clock />} value={25} label="Years Experience" />
-
-  <Stat icon={<ImageIcon />} value={1000000} label="Designs Created" />
-
-  <Stat icon={<Star />} value={98.7} label="Client Retention" isPercent />
-
-</div>
+        </div>
 
       </div>
     </section>
@@ -177,7 +199,6 @@ function Stat({ icon, value, label, isPercent }) {
           {icon}
         </div>
 
-        {/* Number */}
         <h3 className="text-xl sm:text-2xl font-bold text-white">
 
           {isPercent

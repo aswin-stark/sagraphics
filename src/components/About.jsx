@@ -1,6 +1,6 @@
 import { CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
-
+import logo from "../assets/sa.png";
 export default function AboutSection() {
   return (
     <section id="about" className="min-h-screen text-white px-6 py-20">
@@ -30,31 +30,15 @@ export default function AboutSection() {
         >
           <div className="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 w-72 h-80 flex flex-col items-center justify-center transition-all duration-500 hover:shadow-[0_0_60px_rgba(255,115,0,0.6)]">
 
-            {/* SVG Printer */}
-            <svg
-              width="80"
-              height="80"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="mb-4 text-orange-400"
-            >
-              <path
-                d="M6 9V4h12v5M6 14h12v6H6z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              />
-              <rect
-                x="4"
-                y="9"
-                width="16"
-                height="5"
-                rx="1"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              />
-            </svg>
+     <img
+  src={logo}
+  alt="Shri Abirami Graphics Logo"
+  className="w-24 h-24 object-contain mb-4"
+/>
 
-            <h2 className="text-2xl font-semibold text-orange-400">SAG</h2>
+<h2 className="text-xl font-semibold text-orange-400 text-center">
+  SHRI ABIRAMI GRAPHICS
+</h2>
             <p className="text-gray-400 text-sm">Since 2003</p>
 
             {/* Floating Tags */}

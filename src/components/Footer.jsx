@@ -1,6 +1,6 @@
 import { Facebook, Instagram, Twitter, MapPin, Phone, Mail } from "lucide-react";
 import { motion } from "framer-motion";
-
+import footBg from "../assets/sa.png";
 export default function Footer() {
   return (
     <footer className="text-white px-6 py-14 relative overflow-hidden bg-gradient-to-br from-black via-[#0a0a0a] to-orange-950">
@@ -18,9 +18,11 @@ export default function Footer() {
             transition={{ duration: 0.4 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="bg-orange-500 text-black px-3 py-2 rounded-full font-bold shadow-[0_0_10px_rgba(255,115,0,0.5)]">
-                SAG
-              </div>
+                      <img
+                  src={footBg}
+                  alt="Shri Abirami Graphics"
+                  className="h-10 w-auto object-contain"
+                />
               <div>
                 <h2 className="font-semibold">SHRI ABIRAMI</h2>
                 <p className="text-orange-400 text-sm">GRAPHICS</p>

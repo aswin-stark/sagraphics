@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
-
+import headBg from "../assets/sa.png";
 export default function Header() {
   const [open, setOpen] = useState(false);
 
@@ -28,9 +28,11 @@ export default function Header() {
       >
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold">
-            SAG
-          </div>
+        <img
+    src={headBg}
+    alt="Shri Abirami Graphics"
+    className="h-10 w-auto object-contain"
+  />
 
           <div className="leading-tight">
             <h1 className="text-white font-semibold text-sm">

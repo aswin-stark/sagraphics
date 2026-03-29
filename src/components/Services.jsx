@@ -5,37 +5,37 @@ import { FaTimes } from "react-icons/fa";
 const services = [
   {
     title: "Brochure Design",
-    image: "/sagraphics/images/brochure.jpeg",
+    image: "/images/brochure.jpeg",
     description:
       "Transform your ideas into visually compelling brochures that communicate your brand story with clarity and style. Our brochure designs combine modern typography, structured layouts, and eye-catching visuals to create powerful marketing materials that captivate your audience and leave a lasting impression.",
   },
   {
     title: "Poster & Banner Design",
-    image: "/sagraphics/images/poster.jpeg",
+    image: "/images/poster.jpeg",
     description:
       "Capture attention instantly with bold and creative poster and banner designs using vibrant colors, impactful typography, and strong visual hierarchy.",
   },
   {
     title: "Business Card Design",
-    image: "/sagraphics/images/businesscard.jpeg",
+    image: "/images/businesscard.jpeg",
     description:
       "Make a powerful first impression with professionally crafted business cards that reflect your brand identity and creativity.",
   },
   {
     title: "Magazine & Book Layout",
-    image: "/sagraphics/images/magazine.jpeg",
+    image: "/images/magazine.jpeg",
     description:
       "Beautifully structured magazine and book layouts with balanced typography and professional editorial design.",
   },
   {
     title: "Invitation Design",
-    image: "/sagraphics/images/invitation.jpeg",
+    image: "/images/invitation.jpeg",
     description:
       "Elegant and personalized invitation designs for weddings, events, and special occasions.",
   },
   {
     title: "Product Catalogue Design",
-    image: "/sagraphics/images/catalogue.jpeg",
+    image: "/images/catalogue.jpeg",
     description:
       "Professional catalogue layouts that showcase your products clearly and effectively.",
   },

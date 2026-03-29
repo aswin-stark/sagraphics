@@ -4,5 +4,5 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/sagraphics/", // ✅ MUST be string with slashes
+   // ✅ MUST be string with slashes
 })
